@@ -12,10 +12,9 @@ public class Network {
 	 * зарегистрированные в сети. Если такой номер найден, то осуществить вызов,
 	 * если нет - вывест сообщение о неправильности набранного номера.
 	 * 
-	 * 
 	 */
 
-	protected ArrayList<String> registeredNumbersList = new ArrayList<String>();
+	private List<String> registeredNumbersList = new ArrayList<String>();
 
 	public Network() {
 		registeredNumbersList.add("0671111111");
