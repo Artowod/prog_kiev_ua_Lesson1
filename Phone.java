@@ -9,13 +9,13 @@ public class Phone {
 	 * зарегистрированные в сети. Если такой номер найден, то осуществить вызов,
 	 * если нет - вывест сообщение о неправильности набранного номера.
 	 * 
-	 * 
 	 */
 
-	private static String phoneNumber;
+	private String phoneNumber;
+	private Network mobileNetworkInstance;
 	
-	public Phone(String phoneNumber) {
-		this.phoneNumber = phoneNumber;		
+	public Phone(Network mobileNetworkInstance) {
+		this.mobileNetworkInstance = mobileNetworkInstance;
 	}
 
 	public String getPhoneNumber() {
@@ -30,12 +30,12 @@ public class Phone {
 		mobileNetworkInstance.registerNumber(phoneNumber);
 	}
 
-	public void call(Network mobileNetworkInstance, String outboundCallNumber) {
+	public void call(String outboundCallNumber) {
 		Boolean isNumberRegistered = mobileNetworkInstance.checkOutboundCallNumber(outboundCallNumber);
 		if (isNumberRegistered) {
 			System.out.println("Target mobile number " + outboundCallNumber + " is valid. Initiate the dialing...");
 		} else {
 			System.out.println("Sorry. " + outboundCallNumber + " number is not registered in the network. ");
 		}
-	}
+	}	
 }
