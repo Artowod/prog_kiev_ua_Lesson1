@@ -3,21 +3,26 @@ package ua.prog.java.lesson1;
 public class MainForPhone {
 
 	/*
-	 * Описать класс Phone. Одним из свойств должен быть его номер. Также описать
-	 * класс Network (Сеть мобильного оператора). Телефон должен иметь метод
-	 * регистрации в сети мобильного оператора. Также у телефона должен быть метод
-	 * call (номер другого телефона), который переберёт все телефоны,
-	 * зарегистрированные в сети. Если такой номер найден, то осуществить вызов,
-	 * если нет - вывест сообщение о неправильности набранного номера.
+	 * РћРїРёСЃР°С‚СЊ РєР»Р°СЃСЃ Phone. РћРґРЅРёРј РёР· СЃРІРѕР№СЃС‚РІ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РµРіРѕ РЅРѕРјРµСЂ. РўР°РєР¶Рµ РѕРїРёСЃР°С‚СЊ
+	 * РєР»Р°СЃСЃ Network (РЎРµС‚СЊ РјРѕР±РёР»СЊРЅРѕРіРѕ РѕРїРµСЂР°С‚РѕСЂР°). РўРµР»РµС„РѕРЅ РґРѕР»Р¶РµРЅ РёРјРµС‚СЊ РјРµС‚РѕРґ
+	 * СЂРµРіРёСЃС‚СЂР°С†РёРё РІ СЃРµС‚Рё РјРѕР±РёР»СЊРЅРѕРіРѕ РѕРїРµСЂР°С‚РѕСЂР°. РўР°РєР¶Рµ Сѓ С‚РµР»РµС„РѕРЅР° РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РјРµС‚РѕРґ
+	 * call (РЅРѕРјРµСЂ РґСЂСѓРіРѕРіРѕ С‚РµР»РµС„РѕРЅР°), РєРѕС‚РѕСЂС‹Р№ РїРµСЂРµР±РµСЂС‘С‚ РІСЃРµ С‚РµР»РµС„РѕРЅС‹,
+	 * Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅРЅС‹Рµ РІ СЃРµС‚Рё. Р•СЃР»Рё С‚Р°РєРѕР№ РЅРѕРјРµСЂ РЅР°Р№РґРµРЅ, С‚Рѕ РѕСЃСѓС‰РµСЃС‚РІРёС‚СЊ РІС‹Р·РѕРІ,
+	 * РµСЃР»Рё РЅРµС‚ - РІС‹РІРµСЃС‚ СЃРѕРѕР±С‰РµРЅРёРµ Рѕ РЅРµРїСЂР°РІРёР»СЊРЅРѕСЃС‚Рё РЅР°Р±СЂР°РЅРЅРѕРіРѕ РЅРѕРјРµСЂР°.
 	 * 
 	 * 
 	 */
 
 	public static void main(String[] args) {
-		Phone newPhone = new Phone("0671111115");
 		Network mobileNetworkInstance = new Network();
-		newPhone.registerNumberInNetwork(mobileNetworkInstance);
-		newPhone.call(mobileNetworkInstance, "0671111115");
+		Phone firstPhone = new Phone(mobileNetworkInstance);
+		firstPhone.setPhoneNumber("0671111115");
+		firstPhone.registerNumberInNetwork(mobileNetworkInstance);
+		firstPhone.call("0671111115");
+		
+		Phone secondPhone = new Phone(mobileNetworkInstance);
+		secondPhone.setPhoneNumber("0671111115");
+		secondPhone.registerNumberInNetwork(mobileNetworkInstance);
+		secondPhone.call("0671111515");
 	}
-
 }
